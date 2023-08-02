@@ -5,10 +5,24 @@ class Pedido {
     private boolean encerrado;
     private Cliente cliente;
 
-    public Pedido(Cliente cliente) {
+    private Endereco enderecoEntrega;
+
+    public Pedido(Cliente cliente, Endereco enderecoEntrega) {
         this.pizzas = new ArrayList<>();
         this.encerrado = false;
         this.cliente = cliente;
+    }
+
+    private Endereco enderecoEntrega() {
+        return enderecoEntrega;
+    }
+
+    public Endereco getEnderecoEntrega() {
+        return enderecoEntrega;
+    }
+
+    public void setEnderecoEntrega(Endereco enderecoEntrega) {
+        this.enderecoEntrega = enderecoEntrega;
     }
 
     public void adicionarPizza(Pizza pizza) {
@@ -30,9 +44,7 @@ class Pedido {
     public Cliente getCliente() {
         return cliente;
     }
-    public String getEnderecoEntrega() {
-        return cliente.getEnderecoEntrega();
-    }
+
 
     @Override
     public String toString() {
