@@ -81,14 +81,11 @@ public class Main {
                             System.out.println("\nEscolha o sabor da pizza:");
                             System.out.println("1 - Frango");
                             System.out.println("2 - Queijo");
-                            System.out.println("0 - Encerrar Pedido");
                             System.out.print("Escolha uma opção: ");
                             int saborPizza = scanner.nextInt();
                             scanner.nextLine();
 
-                            if (saborPizza == 0) {
-                                encerrarPedido = true;
-                            } else if (saborPizza == 1) {
+                            if (saborPizza == 1) {
                                 Pizza pizza = new Pizza(tamanho, "Frango");
                                 pedido.adicionarPizza(pizza);
                             } else if (saborPizza == 2) {
@@ -97,6 +94,8 @@ public class Main {
                             } else {
                                 System.out.println("Opção inválida. Tente novamente.");
                             }
+
+                                encerrarPedido = true;
                         }
                         cadastroDePedidos.fazerPedido(pedido);
                         System.out.println("Pedido realizado com sucesso!");
@@ -215,4 +214,5 @@ public class Main {
     }
 
     }
+
 }
